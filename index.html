@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JonnLenn Lahmar — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="#projects" class="nav__link">Projects</a>
+    <a href="#experience" class="nav__link">Experience</a>
     <a href="#about" class="nav__link">About</a>
     <a href="#contact" class="nav__link nav__link--active">Contact</a>
   </nav>
 
   <header class="hero" id="about">
     <div class="hero__content">
-      <img src="images/profile.jpg"  alt="My photo" class="hero__image" width="120" height="120">
-      <h2 class="hero__headline">JonnLenn Lahmar</h2>
-      <p class="hero__bio">A passionate high school student about engineering, mathematics and robotics</p>
+      <img src="assets/profile.jpg" alt="My photo" class="hero__image" width="300" height="300">
+      <h1 class="hero__headline">JonnLenn Lahmar</h1>
+      <p class="hero__bio">A passionate 16 year old high school student about engineering, mathematics and robotics</p>
       <p class="hero__bio">My goal is to become a mechanical engineer specializing in robotics. I enjoy learning through hands-on projects and constantly improving my skills.</p>
-      <p class="hero__bio">"It should be a privilege to learn"</p>
+      <p class="hero__quote">"It should be a privilege to learn"</p>
       <div class="hero__buttons">
-        <a href="https://github.com/jonnlennlahmar">Github</a>
-        <a href="images/resume.pdf">Resume</a>
+        <a href="https://github.com/jonnlennlahmar" class="btn btn--filled" target="_blank" rel="noopener noreferrer">Github</a>
+        <a href="images/resume.pdf" class="btn btn--outline">Resume</a>
       </div>
     </div>
   </header>
@@ -32,8 +35,10 @@
       <div class="skills-grid" role="list">
         <div class="skill-tag" role="listitem">Python</div>
         <div class="skill-tag" role="listitem">PyGame</div>
-        <div class="skill-tag" role="listitem">HTML</div>
+        <div class="skill-tag" role="listitem">Pyxel</div>
         <div class="skill-tag" role="listitem">C++</div>
+        <div class="skill-tag" role="listitem">HTML</div>
+        <div class="skill-tag" role="listitem">CSS</div>
         <div class="skill-tag" role="listitem">Java</div>
         <div class="skill-tag" role="listitem">Git</div>
         <div class="skill-tag" role="listitem">Github</div>
@@ -44,14 +49,138 @@
       </div>
     </div>
   </section>
-  <section class="section" id="education" aria-labelledby="education-label">
+
+  <section class="section" id="experience" aria-labelledby="experience-label">
     <div class="section__content">
-      <p class="section__label" id="education-label">Education</p>
-      <article class="education-card">
-        <h2 class="education-card__institution">Lycée René Descartes</h2>
-        <p class="education-card__degree">Focusing in Mathematics,Physics and Robotics</p>
-        <p class="education-card__details"> 17/20, Constantly at the top among my grade</p>
-        <span class="education-card__year">2015-Present</span>
+      <p class="section__label" id="experience-label">Experience</p>
+
+      <article class="experience-card">
+        <h2 class="experience-card__position">Engineering Intern</h2>
+        <p class="experience-card__company">CamTech University</p>
+        <p class="experience-card__details">I worked largely autonomously on two engineering projects while adapting to limited hardware resources. Under the guidance of AI and mechatronics engineering mentors, I developed a personal portfolio website and rebuilt an Arduino-based bi-copter control system adapted from an existing open-source project, gaining practical experience in problem-solving, embedded systems, control engineering and software development.</p>
+        <span class="experience-card__year">June 2026 - July 2026</span>
+
+        <div class="exp-slider" data-slider="exp1" role="region" aria-label="CamTech internship gallery">
+          <button class="exp-slider__arrow exp-slider__arrow--prev" aria-label="Previous image" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="exp-slider__track">
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <img src="assets/project1.jpg" alt="Description" class="exp-slider__img">
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <img src="assets/Simulation system of eniko T enikob.png" alt="Description" class="exp-slider__img">
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <img src="assets/Eniko T Enilkob.png" alt="Description" class="exp-slider__img">
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                </span><img src="assets/angel target.png" alt="Description" class="exp-slider__img">
+              </div>
+            </div>
+          </div>
+          <button class="exp-slider__arrow exp-slider__arrow--next" aria-label="Next image" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="exp-slider__dots" role="tablist" aria-label="Slide navigation"></div>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <h2 class="experience-card__position">Engineering Intern</h2>
+        <p class="experience-card__company">CamTech University</p>
+        <p class="experience-card__details">I worked alongside university students on the development of a large autonomous agricultural robot. In addition to observing how the team organized and shared their work, I helped with the final stages of the robot's assembly and learned about different mechanical systems and how they work together in real engineering projects.</p>
+        <span class="experience-card__year">December 2024 - January 2025</span>
+
+        <div class="exp-slider" data-slider="exp2" role="region" aria-label="CamTech robot project gallery">
+          <button class="exp-slider__arrow exp-slider__arrow--prev" aria-label="Previous image" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="exp-slider__track">
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/robotparts.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/robot.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/robot1.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/certif1.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+          </div>
+          <button class="exp-slider__arrow exp-slider__arrow--next" aria-label="Next image" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="exp-slider__dots" role="tablist" aria-label="Slide navigation"></div>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <h2 class="experience-card__position">Volunteer</h2>
+        <p class="experience-card__company">Elephant Valley Project</p>
+        <p class="experience-card__details">I helped raise awareness about elephant conservation and participated in community outreach programs. I assisted in spreading information about the importance of protecting these majestic creatures and their habitats.</p>
+        <span class="experience-card__year">February 2026</span>
+
+        <div class="exp-slider" data-slider="exp3" role="region" aria-label="Elephant Valley Project gallery">
+          <button class="exp-slider__arrow exp-slider__arrow--prev" aria-label="Previous image" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="exp-slider__track">
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/elephant.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/elephant valley.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/elephant valley1.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+            <div class="exp-slider__slide">
+              <div class="exp-slider__placeholder">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span><img src="assets/elephant valley2.jpeg" alt="Description" class="exp-slider__img"></span>
+              </div>
+            </div>
+          </div>
+          <button class="exp-slider__arrow exp-slider__arrow--next" aria-label="Next image" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="exp-slider__dots" role="tablist" aria-label="Slide navigation"></div>
+        </div>
       </article>
     </div>
   </section>
@@ -60,27 +189,17 @@
     <div class="section__content" style="max-width: 900px;">
       <h2 class="projects-prompt" id="projects-label">Projects</h2>
       <div class="projects-grid">
-        <article
-          class="project-card"
-          role="button"
-          tabindex="0"
-          data-project="project2"
-        >
-          <img src="images/project2.jpg"class="project-card__image" loading="lazy">
+        <article class="project-card" role="button" tabindex="0" data-project="project1" aria-label="View details for Arduino Bicopter project">
+          <img src="assets/arduinoproject.jpeg" class="project-card__image" alt="Arduino Bicopter project" loading="lazy">
           <div class="project-card__overlay">
             <div>
-              <p class="project-card__title">Arduino-based-bi-copter-experiment</p>
+              <p class="project-card__title">Arduino-based-Bicopter Control System</p>
               <p class="project-card__year">2026</p>
             </div>
           </div>
         </article>
-        <article
-          class="project-card"
-          role="button"
-          tabindex="0"
-          data-project="project1"
-        >
-          <img src="assets/project1" class="project-card__image" loading="lazy">
+        <article class="project-card" role="button" tabindex="0" data-project="project2" aria-label="View details for Tower Defense Game">
+          <img src="assets/TowerDefense.png" class="project-card__image" alt="Tower Defense Game" loading="lazy">
           <div class="project-card__overlay">
             <div>
               <p class="project-card__title">Tower Defense game</p>
@@ -88,13 +207,8 @@
             </div>
           </div>
         </article>
-        <article
-          class="project-card"
-          role="button"
-          tabindex="0"
-          data-project="project2"
-        >
-          <img src="images/project2.jpg"class="project-card__image" loading="lazy">
+        <article class="project-card" role="button" tabindex="0" data-project="project3" aria-label="View details for Personal Website Portfolio">
+          <img src="assets/SITE.png" class="project-card__image" alt="Personal Website Portfolio" loading="lazy">
           <div class="project-card__overlay">
             <div>
               <p class="project-card__title">Personal Website Portfolio</p>
@@ -102,14 +216,8 @@
             </div>
           </div>
         </article>
-        <article
-          class="project-card"
-          role="button"
-          tabindex="0"
-          data-project="project3"
-          aria-label="View details for Real-time Collaboration Engine project"
-        >
-          <img src="images/project3.jpg" class="project-card__image" loading="lazy">
+        <article class="project-card" role="button" tabindex="0" data-project="project4" aria-label="View details for Phone Holder CAD Design">
+          <img src="assets/PhoneHolder1.png" class="project-card__image" alt="Phone Holder CAD Design" loading="lazy">
           <div class="project-card__overlay">
             <div>
               <p class="project-card__title">Phone holder CAD Design</p>
@@ -117,14 +225,8 @@
             </div>
           </div>
         </article>
-        <article
-          class="project-card"
-          role="button"
-          tabindex="0"
-          data-project="project4"
-          aria-label="View details for Low-latency Trading Infrastructure project"
-        >
-          <img src="images/project4.jpg" class="project-card__image" loading="lazy">
+        <article class="project-card" role="button" tabindex="0" data-project="project5" aria-label="View details for Sensor-based navigation">
+          <img src="assets/Mbot1.png" class="project-card__image" alt="Sensor-based navigation" loading="lazy">
           <div class="project-card__overlay">
             <div>
               <p class="project-card__title">Sensor-based navigation</p>
@@ -136,40 +238,38 @@
     </div>
   </section>
 
-    <section class="section" id="education" aria-labelledby="education-label">
+  <section class="section" id="education" aria-labelledby="education-label">
     <div class="section__content">
       <p class="section__label" id="education-label">Education</p>
       <article class="education-card">
-        <h2 class="education-card__institution">Lycée René Descartes</h2>
-        <p class="education-card__degree">Focusing in Mathematics,Physics and Robotics</p>
-        <p class="education-card__details"> 17/20, Constantly at the top among my grade</p>
+        <h2 class="education-card__institution">Lycee Rene Descartes</h2>
+        <p class="education-card__degree">Focusing in Mathematics, Physics and Robotics</p>
+        <p class="education-card__details">17/20, Constantly at the top among my grade</p>
         <span class="education-card__year">2015-Present</span>
       </article>
     </div>
   </section>
 
-
   <section class="contact" id="contact" aria-labelledby="contact-label">
     <div class="contact__content">
       <h2 class="contact__name" id="contact-label">JonnLenn Lahmar</h2>
       <p class="contact__info">
-        <a href="mailto:https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCGmPgmmNZQtSPNCCpKGLhpLvFtkZJkSPkxjFkCZkfvdgBHwBbGfRBlmGzVRqNPJpscvCg">jonnlennlahmar@gmail.com</a>
+        <a href="mailto:jonnlennlahmar@gmail.com">jonnlennlahmar@gmail.com</a>
         <span class="contact__separator">&bull;</span>
         <span>(+855) 88-358-1494</span>
         <span class="contact__separator">&bull;</span>
-        <a href="https://github.com/jonnlennlahmar" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+        <a href="https://github.com/jonnlennlahmar" target="_blank" rel="noopener noreferrer">Github Profile</a>
       </p>
     </div>
   </section>
 
-  
   <footer class="footer">
-    <p class="footer__text"> 2026 JonnLenn Lahmar. All rights reserved.</p>
+    <p class="footer__text">2026 JonnLenn Lahmar. All rights reserved.</p>
   </footer>
 
-  <!-- ===== PROJECT MODAL ===== -->
+  <!-- Project Modal -->
   <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-    <button class="modal__close" aria-label="Close project details">&times;</button>
+    <button class="modal__close" aria-label="Close project details" type="button">&times;</button>
     <div class="modal__content" id="modal-content">
       <!-- Content populated by JavaScript -->
     </div>

@@ -1,73 +1,80 @@
-/* ============================================
-   0xFolio - Portfolio Interactions
-   Modal, smooth scroll, accessibility
-   ============================================ */
-
 // ===== Project Data =====
 const projects = [
   {
     id: "project1",
-    title: "Arduino-based-bi-copter-experiment",
+    title: "Arduino-based-Bicopter Control System",
     year: "2026",
     links: [
       { label: "View on GitHub", url: "https://github.com" }
     ],
-    abstract: "This research presents a novel neural network architecture for real-time path planning in autonomous drone systems operating in unstructured environments. The proposed method combines a convolutional encoder for visual scene understanding with a transformer-based decoder for sequential path generation. Trained on over 50,000 simulated flight hours across diverse environments including forests, urban canyons, and indoor spaces, the model achieves 94.2% collision-free navigation while reducing computational latency by 60% compared to traditional RRT* algorithms. The system was validated on a fleet of custom-built quadrotors equipped with stereo vision cameras and onboard NVIDIA Jetson processors.",
+    sections: [
+      {
+        title: "Overview",
+        description: "Adapted an open-source Arduino-based bi-copter project by Eniko T. Enikov in 2025 to available hardware as part of my engineering internship. The project focused on implementing a PID control system, integrating an MPU-6050 IMU, and using MATLAB telemetry to analyze and tune the controller for stable flight behavior.",
+        media: "assets/arduinoproject1.jpeg"
+      },
+      {
+        title: "Results and Contributions",
+        description: "I adapted the original design to different hardware, built and wired the electronic system, implemented and tuned the PID controller, developed Arduino and MATLAB telemetry code and finally analyzed controller performance using real-time plots.",
+        media: "assets/angel target.png"
+      }
+    ]
   },
   {
     id: "project2",
-    title: "Distributed Log Analytics Platform",
-    year: "2024",
+    title: "Tower Defense Game",
+    year: "2026",
     links: [
-      { label: "View on GitHub", url: "https://github.com" },
-      { label: "Live Demo", url: "https://demo.example.com" }
+      { label: "View on GitHub", url: "https://github.com" }
     ],
-    abstract: "A horizontally distributed log processing platform capable of ingesting and analyzing over 2 million events per second with sub-second query latency. Built on a custom stream processing engine that combines the best of Apache Flink and ClickHouse architectures, the system provides real-time anomaly detection, pattern recognition, and automated alerting for enterprise infrastructure monitoring. The platform reduced incident response time by 75% at a Fortune 500 deployment and operates on commodity hardware clusters.",
     sections: [
       {
-        title: "System Overview",
-        description: "The platform ingests logs from thousands of microservices through a custom Kafka-like message broker, processes them through a DAG-based computation graph, and stores aggregated results in a columnar database optimized for time-series queries.",
-        media: "images/project2-demo.jpg",
-        mediaAlt: "Real-time analytics dashboard with system metrics and network topology"
+        title: "Project Overview",
+        description: "Developed with a group of 3, a tower defense game in 6h (raw coding) for a Worldwide french school Coding competition (Nuit de Code) for high school students using Pyxel, a Python library for creating pixel art games. The game features multiple levels, various enemy types, and a range of tower upgrades. Implemented pathfinding algorithms for enemy movement and designed a user-friendly interface for tower placement and upgrades."
       },
       {
         title: "Results",
-        description: "Deployed across 12 availability zones processing 50TB of log data daily. Query latency p99 < 200ms. Achieved 99.999% uptime over 6 months of production operation.",
-        media: null
+        description: "Although my game did not place among the winners, it ranked around top 200 out of 1500+ participants. This project taught me how to develop, finish a project under strict time pressure as well as how to work in a team and manage tasks effectively.",
+        media: "assets/TowerDefense1.png"
       }
     ]
   },
   {
     id: "project3",
-    title: "Real-time Collaboration Engine",
-    year: "2024",
+    title: "Personal Website Portfolio",
+    year: "2026",
     links: [
       { label: "View on GitHub", url: "https://github.com" }
     ],
-    abstract: "A conflict-free replicated data type (CRDT) based collaboration engine supporting real-time document editing with offline-first capabilities. The system handles concurrent edits from thousands of users with guaranteed eventual consistency and zero merge conflicts. Built in Rust and compiled to WebAssembly for browser deployment, achieving 60fps synchronization even on low-bandwidth connections.",
     sections: [
       {
-        title: "Demo",
-        description: "The engine powers a Notion-like document editor where multiple users can simultaneously edit text, tables, and embedded components without any locking mechanisms.",
-        media: "images/project3-demo.jpg",
-        mediaAlt: "Collaborative editor interface showing multiple user cursors editing simultaneously"
+        title: "Overview",
+        description: "I built this personal website portfolio to showcase my projects and skills. The website is built using HTML, CSS, and JavaScript, with a focus on responsive design and accessibility. It features a clean and modern layout, interactive project cards, and smooth scrolling navigation. I focused mainly on user experience, accessibility, and performance optimization, by doing a accessibility ux design audit and optimizing the website for fast loading times.",
+        media: "assets/SITE.png"
       }
     ]
   },
   {
     id: "project4",
-    title: "Low-latency Trading Infrastructure",
-    year: "2023",
-    links: [
-      { label: "View on GitHub", url: "https://github.com" },
-      { label: "Read Paper", url: "https://arxiv.org" }
-    ],
-    abstract: "A high-frequency trading infrastructure built from the ground up with a custom kernel-bypass networking stack and lock-free data structures. The system achieves sub-microsecond round-trip latency for market data ingestion and order execution, making it competitive with industry-leading solutions at a fraction of the cost.",
+    title: "Phone Holder CAD Design",
+    year: "2022",
     sections: [
       {
-        title: "Performance",
-        description: "Benchmarked at 850 nanoseconds median RTT on a 10Gbps network. Handles 5 million orders per second on a single server with zero packet loss during burst traffic.",
-        media: null
+        title: "Overview",
+        description: "I built a 3D CAD design for a phone holder, created using SolidWorks. The design features a sleek and modern aesthetic with a focus on functionality and ease of use. This was for a class project in which I learned how to use SolidWorks and how to design for 3D printing.",
+        media: "assets/PhoneHolder1.png"
+      }
+    ]
+  },
+  {
+    id: "project5",
+    title: "Sensor-Based Navigation",
+    year: "2019",
+    sections: [
+      {
+        title: "Overview",
+        description: "Built and tested a small sensor-driven navigation system for a Mbot robot using Arduino, it own ultrasonic sensors and scratch code. The system was designed to detect obstacles and navigate around them autonomously. This project taught me the basics of robotics, sensor integration, and programming with Arduino with scratch code.",
+        media: "assets/Mbot.jpg"
       }
     ]
   }
@@ -82,23 +89,17 @@ const projectCards = document.querySelectorAll(".project-card");
 let lastFocusedElement = null;
 
 // ===== Modal Functions =====
-
 function openModal(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
 
-  // Store last focused element for restoration
   lastFocusedElement = document.activeElement;
-
-  // Populate modal content
   modalContent.innerHTML = buildModalHTML(project);
 
-  // Show modal
   modal.setAttribute("aria-hidden", "false");
   modal.classList.add("modal--open");
   document.body.style.overflow = "hidden";
 
-  // Focus close button for accessibility
   setTimeout(() => {
     modalCloseBtn.focus();
   }, 100);
@@ -109,7 +110,6 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 
-  // Restore focus
   if (lastFocusedElement) {
     lastFocusedElement.focus();
     lastFocusedElement = null;
@@ -134,9 +134,19 @@ function buildModalHTML(project) {
       <div class="modal__section">
         <h3 class="modal__section-title">${section.title}</h3>
         <p class="modal__text">${section.description}</p>
-        ${section.media ? `<img src="${section.media}" alt="${section.mediaAlt || ""}" class="modal__media" loading="lazy">` : ""}
+        ${section.media ? `<img src="${section.media}" alt="${section.title} visual" class="modal__media" loading="lazy">` : ""}
       </div>
     `).join("");
+  }
+
+  let abstractHTML = "";
+  if (project.abstract && project.abstract.trim()) {
+    abstractHTML = `
+      <div class="modal__section">
+        <h3 class="modal__section-title">Abstract</h3>
+        <p class="modal__text">${project.abstract}</p>
+      </div>
+    `;
   }
 
   return `
@@ -148,24 +158,18 @@ function buildModalHTML(project) {
       </div>
       ${linksHTML}
     </div>
-    <div class="modal__section">
-      <h3 class="modal__section-title">Abstract</h3>
-      <p class="modal__text">${project.abstract}</p>
-    </div>
+    ${abstractHTML}
     ${sectionsHTML}
   `;
 }
 
-// ===== Event Listeners =====
-
-// Project card click
+// ===== Project Card Event Listeners =====
 projectCards.forEach(card => {
   card.addEventListener("click", () => {
     const projectId = card.getAttribute("data-project");
     openModal(projectId);
   });
 
-  // Keyboard support
   card.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -175,24 +179,22 @@ projectCards.forEach(card => {
   });
 });
 
-// Close button
+// ===== Modal Event Listeners =====
 modalCloseBtn.addEventListener("click", closeModal);
 
-// Click on backdrop to close
 modal.addEventListener("click", (e) => {
   if (e.target === modal) {
     closeModal();
   }
 });
 
-// Escape key to close
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("modal--open")) {
     closeModal();
   }
 });
 
-// Focus trap within modal
+// Focus trap for modal
 modal.addEventListener("keydown", (e) => {
   if (e.key !== "Tab") return;
 
@@ -233,13 +235,13 @@ document.querySelectorAll('.nav__link[href^="#"]').forEach(anchor => {
   });
 });
 
-// ===== Active Navigation State on Scroll =====
-const sections = document.querySelectorAll("[id]");
+// ===== Active Nav Highlight on Scroll =====
+const trackedSections = document.querySelectorAll("[id]");
 const navLinks = document.querySelectorAll(".nav__link");
 
 function updateActiveNav() {
   let current = "";
-  sections.forEach(section => {
+  trackedSections.forEach(section => {
     const sectionTop = section.offsetTop;
     if (scrollY >= sectionTop - 200) {
       current = section.getAttribute("id");
@@ -255,3 +257,94 @@ function updateActiveNav() {
 }
 
 window.addEventListener("scroll", updateActiveNav);
+
+// ===== Experience Image Slider =====
+function initExperienceSliders() {
+  const sliders = document.querySelectorAll(".exp-slider");
+
+  sliders.forEach(slider => {
+    const track = slider.querySelector(".exp-slider__track");
+    const slides = slider.querySelectorAll(".exp-slider__slide");
+    const prevBtn = slider.querySelector(".exp-slider__arrow--prev");
+    const nextBtn = slider.querySelector(".exp-slider__arrow--next");
+    const dotsContainer = slider.querySelector(".exp-slider__dots");
+
+    if (slides.length === 0) return;
+
+    // Create dot indicators
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "exp-slider__dot";
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+      dot.setAttribute("aria-selected", index === 0 ? "true" : "false");
+      dot.addEventListener("click", () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = slider.querySelectorAll(".exp-slider__dot");
+
+    function updateDots() {
+      const scrollLeft = track.scrollLeft;
+      const slideWidth = track.offsetWidth * 0.85 + 12; // slide width + gap
+      const activeIndex = Math.round(scrollLeft / slideWidth);
+
+      dots.forEach((dot, index) => {
+        dot.setAttribute("aria-selected", index === activeIndex ? "true" : "false");
+      });
+    }
+
+    function goToSlide(index) {
+      if (index < 0 || index >= slides.length) return;
+      const slideWidth = slides[0].offsetWidth + 12; // + gap
+      track.scrollTo({
+        left: slideWidth * index,
+        behavior: "smooth"
+      });
+    }
+
+    function goNext() {
+      const scrollLeft = track.scrollLeft;
+      const slideWidth = slides[0].offsetWidth + 12;
+      const currentIndex = Math.round(scrollLeft / slideWidth);
+      goToSlide(Math.min(currentIndex + 1, slides.length - 1));
+    }
+
+    function goPrev() {
+      const scrollLeft = track.scrollLeft;
+      const slideWidth = slides[0].offsetWidth + 12;
+      const currentIndex = Math.round(scrollLeft / slideWidth);
+      goToSlide(Math.max(currentIndex - 1, 0));
+    }
+
+    prevBtn.addEventListener("click", goPrev);
+    nextBtn.addEventListener("click", goNext);
+
+    // Update dots on scroll
+    let scrollTimeout;
+    track.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateDots, 50);
+    });
+
+    // Keyboard navigation
+    slider.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goNext();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goPrev();
+      }
+    });
+
+    // Set slider tabIndex for keyboard access
+    slider.setAttribute("tabindex", "0");
+
+    // Initial dot state
+    updateDots();
+  });
+}
+
+// Initialize sliders when DOM is ready
+document.addEventListener("DOMContentLoaded", initExperienceSliders);
