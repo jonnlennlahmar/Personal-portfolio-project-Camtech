@@ -5,7 +5,7 @@ const projects = [
     title: "Arduino-based-Bicopter Control System",
     year: "2026",
     links: [
-      { label: "View on GitHub", url: "https://github.com" }
+      { label: "View on GitHub", url: "https://github.com/jonnlennlahmar" }
     ],
     sections: [
       {
@@ -25,7 +25,7 @@ const projects = [
     title: "Tower Defense Game",
     year: "2026",
     links: [
-      { label: "View on GitHub", url: "https://github.com" }
+      { label: "View on GitHub", url: "https://github.com/jonnlennlahmar" }
     ],
     sections: [
       {
@@ -44,7 +44,7 @@ const projects = [
     title: "Personal Website Portfolio",
     year: "2026",
     links: [
-      { label: "View on GitHub", url: "https://github.com" }
+      { label: "View on GitHub", url: "https://github.com/jonnlennlahmar/Personal-portfolio-project-Camtech" }
     ],
     sections: [
       {
